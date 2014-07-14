@@ -1,7 +1,9 @@
 source 'https://rubygems.org'
 
 gem 'berkshelf'
-
+gem 'octokit'
+gem 'dotenv'
+gem 'highline'
 # Uncomment these lines if you want to live on the Edge:
 #
 # group :development do

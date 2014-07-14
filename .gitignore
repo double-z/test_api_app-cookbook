@@ -5,7 +5,7 @@
 .*.sw[a-z]
 *.un~
 pkg/
-
+vendor/
 # Berkshelf
 .vagrant
 /cookbooks
