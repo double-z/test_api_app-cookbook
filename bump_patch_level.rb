@@ -24,21 +24,21 @@ end
 
 updated = false
 
-#if !system("git checkout master")
-#  raise "Failed to checkout master"
-#end
+if !system("git checkout master")
+  raise "Failed to checkout master"
+end
 
-#if !system("git pull")
-#  raise "Failed to git pull master"
-#end
+if !system("git pull")
+  raise "Failed to git pull master"
+end
 
 if File.exists?('VERSION')
   version_file = File.expand_path("VERSION")
   bump_patch_level(version_file)
-#  if !system("git add #{version_file}")
-#    raise "Failed to git add #{version_file}: #{$?}"
-#  end
-#  updated = true
+  if !system("git add #{version_file}")
+    raise "Failed to git add #{version_file}: #{$?}"
+  end
+  updated = true
 end
 
 if updated
