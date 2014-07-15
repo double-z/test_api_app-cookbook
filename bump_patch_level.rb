@@ -4,12 +4,15 @@ def bump_patch_level(versionfile)
   File.open(versionfile, 'r+') do |f|
     lines = f.readlines
     lines.each do |line|
-       major = $1
+      if line =~ /(\d+)\.(\d+)\.(\d+).*$/
+
+        major = $1
         minor = $2
         patch = $3
         new_patch = patch.to_i + 1
-        puts "Incrementing #{metadatarb} version from #{major}.#{minor}.#{patch} to #{major}.#{minor}.#{new_patch}"
+        puts "Incrementing #{versionfile} version from #{major}.#{minor}.#{patch} to #{major}.#{minor}.#{new_patch}"
         line.replace("#{major}.#{minor}.#{new_patch}")
+      end
     end
     f.pos = 0
     lines.each do |line|
