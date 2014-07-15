@@ -14,7 +14,7 @@ end
 #repo = Octokit.repo 'double'
 #rel = repo.rels[:issues]
 puts "Creating Release #{new_version}"
-client.create_release("double-z/test_api_app-cookbook", new_version.to_s.chomp) #, {"target_commitish" => "master", "name" => "#{new_version.to_s}"})
+client.create_release("double-z/test_api_app-cookbook", new_version.to_s.chomp, {"target_commitish" => "master", "name" => "#{new_version.to_s.chomp}"})
 #puts b.inspect
 #repos = user.rels[:repos].get.data
 #puts repos.last.name
